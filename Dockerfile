@@ -14,4 +14,5 @@ ADD source/www /srv/www
 
 EXPOSE 80
 
+WORKDIR /etc/nginx
 CMD ["nginx"]
