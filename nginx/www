@@ -1,5 +1,6 @@
 server {
-    server_name www www.stp5.net stp5.net;
+    listen 80 default_server;
+    server_name www;
 
     error_page 404 /404.html;
 
