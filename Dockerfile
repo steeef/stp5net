@@ -8,8 +8,10 @@ RUN apt-get update && apt-get install --no-install-recommends -y -q nginx \
 
 RUN rm /etc/nginx/sites-available/*
 ADD nginx/www /etc/nginx/sites-available/www
+ADD nginx/hello /etc/nginx/sites-available/hello
 ADD nginx/nginx.conf /etc/nginx/nginx.conf
 RUN ln -s /etc/nginx/sites-available/www /etc/nginx/sites-enabled/
+RUN ln -s /etc/nginx/sites-available/hello /etc/nginx/sites-enabled/
 
 ADD source/www /srv/www
 
