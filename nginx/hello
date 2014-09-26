@@ -1,5 +1,5 @@
 upstream hello_server {
-    server http://hello:80 fail_timeout=0;
+    server hello:80 fail_timeout=0;
 }
 
 server {
