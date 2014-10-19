@@ -1,9 +1,7 @@
-# static web files
-
-FROM busybox
+FROM scratch
 MAINTAINER Stephen Price <steeef@gmail.com>
 
 ADD www /srv/
 VOLUME ["/srv/www"]
 
-CMD ["/bin/sh"]
+CMD ["/bin/true"]
