@@ -1,4 +1,4 @@
-FROM scratch
+FROM busybox
 MAINTAINER Stephen Price <steeef@gmail.com>
 
 ADD www /srv/
