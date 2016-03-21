@@ -8,7 +8,7 @@ errors {
 }
 
 git {
-  repo https://github.com/steeef/stp5.git
+  repo https://github.com/steeef/stp5blog.git
   path ../git
   then hugo --destination=/srv/blog
 }
