@@ -1,14 +1,7 @@
+browse
+
 0.0.0.0
 
 log stdout
 
-errors {
-  log stdout
-  404 404.html
-}
-
-git {
-  repo https://github.com/steeef/stp5blog.git
-  path ../git
-  then hugo --destination=/srv/blog
-}
+errors log stdout
