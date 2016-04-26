@@ -1,7 +1,7 @@
 FROM alpine:3.3
 MAINTAINER Stephen Price <steeef@gmail.com>
 
-LABEL caddy_version="0.8.2" architecture="amd64"
+LABEL caddy_version="0.8.3" architecture="amd64"
 ENV HUGO_VERSION=0.15
 ENV CADDY_FEATURES=git
 ENV DEPENDENCIES git ca-certificates openssh-client
