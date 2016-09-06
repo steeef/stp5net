@@ -1,8 +1,8 @@
 FROM alpine:3.3
 MAINTAINER Stephen Price <steeef@gmail.com>
 
-LABEL caddy_version="0.8.3" architecture="amd64"
-ENV HUGO_VERSION=0.15
+LABEL caddy_version="0.9.1" architecture="amd64"
+ENV HUGO_VERSION=0.16
 ENV CADDY_FEATURES=git
 ENV DEPENDENCIES git ca-certificates openssh-client
 ENV BUILD_PACKAGES wget tar
