@@ -2,5 +2,4 @@
 browse
 
 log stdout
-
-errors log stdout
+errors stdout
