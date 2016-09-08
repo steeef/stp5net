@@ -42,5 +42,7 @@ RUN chown -R caddy:caddy /srv
 
 USER caddy
 
+RUN ulimit -n 4096
+
 ENTRYPOINT ["/usr/bin/caddy"]
 CMD ["--conf", "/etc/Caddyfile"]
