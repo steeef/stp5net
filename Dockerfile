@@ -1,4 +1,4 @@
-FROM alpine:3.3
+FROM alpine:3.4
 MAINTAINER Stephen Price <steeef@gmail.com>
 
 LABEL caddy_version="0.9.1" architecture="amd64"
