@@ -34,7 +34,6 @@ RUN curl --silent --show-error --fail --location \
 RUN apk del ${BUILD_PACKAGES}
 
 EXPOSE 80 443 2015
-VOLUME /srv
 WORKDIR /srv
 
 ADD Caddyfile /etc/Caddyfile
