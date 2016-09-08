@@ -4,8 +4,8 @@ MAINTAINER Stephen Price <steeef@gmail.com>
 LABEL caddy_version="0.9.1" architecture="amd64"
 ENV HUGO_VERSION=0.16
 ENV CADDY_FEATURES=git
-ENV DEPENDENCIES curl git ca-certificates openssh-client
-ENV BUILD_PACKAGES tar libcap
+ENV DEPENDENCIES curl git ca-certificates openssh-client libcap
+ENV BUILD_PACKAGES tar
 ENV CADDY_UID=1001
 ENV CADDY_GID=1001
 
