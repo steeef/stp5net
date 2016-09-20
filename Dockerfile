@@ -3,7 +3,7 @@ MAINTAINER Stephen Price <steeef@gmail.com>
 
 LABEL caddy_version="0.9.1" architecture="amd64"
 ENV HUGO_VERSION=0.16
-ENV CADDY_FEATURES=git
+ARG features=git,cloudflare
 ENV DEPENDENCIES curl git ca-certificates openssh-client libcap
 ENV BUILD_PACKAGES tar
 ENV CADDY_UID=1001
@@ -23,7 +23,7 @@ RUN mkdir -p hugo_${HUGO_VERSION} && \
 
 RUN curl --silent --show-error --fail --location \
       --header "Accept: application/tar+gzip, application/x-gzip, application/octet-stream" -o - \
-      "https://caddyserver.com/download/build?os=linux&arch=amd64&features=${CADDY_FEATURES}" \
+      "https://caddyserver.com/download/build?os=linux&arch=amd64&features=${features}" \
     | tar --no-same-owner -C /usr/bin/ -xz caddy && \
   chmod 0755 /usr/bin/caddy && \
   addgroup -S -g ${CADDY_GID} caddy && \
