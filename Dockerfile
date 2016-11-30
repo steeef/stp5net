@@ -12,14 +12,13 @@ ENV CADDY_GID=1001
 RUN apk add --no-cache ${DEPENDENCIES} ${BUILD_PACKAGES}
 
 
-RUN mkdir -p hugo_${HUGO_VERSION} && \
-  curl --silent --show-error --fail --location \
+RUN curl --silent --show-error --fail --location \
       --header "Accept: application/tar+gzip, application/x-gzip, application/octet-stream" -o - \
       "https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz" \
-    | tar --no-same-owner -C hugo_${HUGO_VERSION} -xz && \
-  mv hugo_${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux_amd64 /usr/bin/hugo && \
+    | tar --no-same-owner -xz && \
+  mv hugo_${HUGO_VERSION}_linux_amd64/hugo_${HUGO_VERSION}_linux_amd64 /usr/bin/hugo && \
   chmod 0755 /usr/bin/hugo && \
-  rm -rf hugo_${HUGO_VERSION}
+  rm -rf hugo_${HUGO_VERSION}_linux_amd64
 
 RUN curl --silent --show-error --fail --location \
       --header "Accept: application/tar+gzip, application/x-gzip, application/octet-stream" -o - \
