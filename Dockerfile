@@ -1,8 +1,8 @@
 FROM alpine:3.4
 MAINTAINER Stephen Price <steeef@gmail.com>
 
-LABEL caddy_version="0.9.1" architecture="amd64"
-ENV HUGO_VERSION=0.16
+LABEL caddy_version="0.9.3" architecture="amd64"
+ENV HUGO_VERSION=0.17
 ARG features=git,cloudflare
 ENV DEPENDENCIES curl git ca-certificates openssh-client libcap
 ENV BUILD_PACKAGES tar
@@ -15,9 +15,9 @@ RUN apk add --no-cache ${DEPENDENCIES} ${BUILD_PACKAGES}
 RUN mkdir -p hugo_${HUGO_VERSION} && \
   curl --silent --show-error --fail --location \
       --header "Accept: application/tar+gzip, application/x-gzip, application/octet-stream" -o - \
-      "https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-64bit.tgz" \
+      "https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz" \
     | tar --no-same-owner -C hugo_${HUGO_VERSION} -xz && \
-  mv hugo_${HUGO_VERSION}/hugo /usr/bin/hugo && \
+  mv hugo_${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux_amd64 /usr/bin/hugo && \
   chmod 0755 /usr/bin/hugo && \
   rm -rf hugo_${HUGO_VERSION}
 
